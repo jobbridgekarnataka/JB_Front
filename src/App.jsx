@@ -4,27 +4,27 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import  './styles/global.scss'
 import Layout from './components/Layout/Layout';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Projects from './pages/Projects/Projects';
-import Tasks from './pages/Tasks/Tasks';
-import Subtasks from './pages/Subtasks/Subtasks';
-import Settings from './pages/Settings/Settings';
+// import Projects from './pages/Projects/Projects';
+// import Tasks from './pages/Tasks/Tasks';
+// import Subtasks from './pages/Subtasks/Subtasks';
+// import Settings from './pages/Settings/Settings';
 import Members from './pages/Members/Members';
 import MembersDetail from './pages/Members/MembersDetail';
-import AssignFor from './pages/AssignFor/AssignFor';
-import ProjectDetail from './pages/Projects/ProjectDetail';
-import TaskDetail from './pages/Tasks/TaskDetail';
-import SubtaskDetail from './pages/Subtasks/SubtaskDetail';
-import AssignForDetail from './pages/AssignFor/AssignForDetail';
+// import AssignFor from './pages/AssignFor/AssignFor';
+// import ProjectDetail from './pages/Projects/ProjectDetail';
+// import TaskDetail from './pages/Tasks/TaskDetail';
+// import SubtaskDetail from './pages/Subtasks/SubtaskDetail';
+// import AssignForDetail from './pages/AssignFor/AssignForDetail';
 import PrivateRoute from './PrivateRoute';
 import LoginForm from './LoginForm';
-import StatusRequests from './pages/StatusRequest/StatusRequests';
-import MembersWorking from './pages/Members_Working/MembersWorking';
-import Unauthorized from './pages/Unauthorized/Unauthorized';
+// import StatusRequests from './pages/StatusRequest/StatusRequests';
+// import MembersWorking from './pages/Members_Working/MembersWorking';
+ import Unauthorized from './pages/Unauthorized/Unauthorized';
 import NotFound from './pages/NotFound/NotFound';
-import ActivityList from './pages/ActivityList/ActivityList';
-import Services from './pages/Services/Services';
-import UserList from './pages/CreateUser/UserList';
-import MemberComments from './pages/MemberComments/MemberComments';
+// import ActivityList from './pages/ActivityList/ActivityList';
+// import Services from './pages/Services/Services';
+// import UserList from './pages/CreateUser/UserList';
+// import MemberComments from './pages/MemberComments/MemberComments';
 import InstallPopup from './components/UI/InstallPopup';
 
 function App() {
@@ -50,9 +50,9 @@ function App() {
             {/* <Route path="project/:id" element={<ProjectDetail />} />
             <Route path="task/:id" element={<TaskDetail />} />
             <Route path="subTask/:id" element={<SubtaskDetail />} />
-            <Route path="assignFor/:id" element={<AssignForDetail />} />
+            <Route path="assignFor/:id" element={<AssignForDetail />} /> */}
             <Route path="/unauthorized" element={<Unauthorized />} />
-            <Route path="/activities" element={<ActivityList/>} />
+            {/* <Route path="/activities" element={<ActivityList/>} />
             <Route path="/memberComments" element={<MemberComments/>} /> */}
             <Route path="*" element={<NotFound />} />
             </Route>
