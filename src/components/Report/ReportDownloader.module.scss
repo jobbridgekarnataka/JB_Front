@@ -1,0 +1,54 @@
+.button_group {
+  display: flex;
+  gap: 12px;
+
+  button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    &.pdf {
+      background: #ff4d4f;
+      color: #fff;
+
+      &:hover {
+        background: #d9363e;
+      }
+    }
+
+    &.csv {
+     
+      background: #52c41a;
+      color: #fff;
+
+      &:hover {
+       
+         background: #3ea40e;
+      }
+    }
+
+    &.docx {
+       background: #40a9ff;
+      color: #fff;
+
+      &:hover {
+        background: #1d8de6;
+      }
+    }
+  }
+}

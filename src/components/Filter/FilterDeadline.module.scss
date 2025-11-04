@@ -1,0 +1,157 @@
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; // allow wrapping on smaller screens
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.datePicker {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  width: 180px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+.customCalendar {
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.deadlineList {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+
+  // @media (max-width: 600px) {
+  //   max-height: unset; // allow full scroll on mobile
+  // }
+}
+
+/** Optional: Custom scrollbar */
+.deadlineList::-webkit-scrollbar {
+  width: 6px;
+}
+.deadlineList::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.deadlineItem {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+.deadlineInfo h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.date {
+  font-size: 13px;
+  color: #888;
+}
+
+.priority {
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &.high {
+    background-color: #00ff2aff;
+   
+  }
+
+  &.medium {
+    background-color:#63b5ecff;
+   
+  }
+
+  &.low {
+    background-color: #d0e03bff;
+   
+  }
+  &.urgent{
+    background-color:#fd3300ff ;
+  }
+}
+
+.status {
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &.planning {
+    background-color: #fbff00ff;
+   
+  }
+  &.in-progress {
+    background-color: #3daae9ff;
+    
+  }
+
+  &.completed {
+    background-color: #1ef102ff;
+   
+  }
+
+  &.on-hold {
+    background-color: #f72525ff;
+    
+  }
+
+  &.Assigned {
+    background-color: #a5ee74ff;
+    
+  }
+
+  &.dropped {
+    background-color: #f72525ff;
+    
+  }
+
+  &.Idea {
+    background-color: #ff9100c5;
+    
+  }
+}
+
+.noSubtasks {
+  font-size: 14px;
+  text-align: center;
+  color: #777;
+  padding: 12px;
+}

@@ -1,0 +1,142 @@
+
+.memberCard {
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  background: var(--surface-elevated); /* ✅ theme */
+  box-shadow: 0 4px 20px var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px var(--shadow-medium); /* ✅ softer lift */
+  }
+}
+
+.memberHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  @media (max-width: 600px) {
+    gap: 2rem;
+  }
+}
+
+.profileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+  border: 2px solid var(--border-light); /* ✅ subtle border */
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* subtle zoom on hover */
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 600px) {
+    margin-right: 0;
+  }
+}
+
+.memberInfo {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+
+  div {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+}
+
+.taskTableWrapper {
+  overflow-x: auto;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-medium) transparent;
+  padding-bottom: var(--spacing-sm);
+  -webkit-overflow-scrolling: touch;
+}
+
+.taskTable {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  font-size: 0.9rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.taskRow {
+  display: contents;
+}
+
+.taskHeader {
+  font-weight: 600;
+  display: contents;
+
+  div {
+    background: var(--bg-tertiary);
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-medium);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+.taskData {
+  div {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+    text-align: center;
+    transition: background 0.3s ease;
+  }
+
+  &:hover div {
+    background: var(--bg-secondary); /* ✅ theme hover */
+  }
+}
+
+.badges {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 36px;
+
+  span {
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--accent-primary);
+      color: var(--active-icon);
+      transform: translateY(-2px);
+    }
+  }
+}

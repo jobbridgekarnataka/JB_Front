@@ -1,0 +1,183 @@
+.headerWrapper {
+  position: fixed;
+  top: 64px; // same as your header height
+  right: 0;
+  z-index: 2;
+  background-color: white;
+  padding: 15px;
+
+    @media (max-width: 768px) {
+    left: 0 !important;        // always start at left
+    width: 100% !important;    // full width
+    padding: 10px;             // optional: smaller padding
+    z-index: 10;
+  }
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tableContainer {
+  position: relative;
+  top: 100px;
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px var(--shadow-medium);
+
+  @media (max-width: 769px) {
+    max-height: 500px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface-elevated); /* ✅ theme */
+  min-width: 600px;
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-tertiary); /* ✅ theme */
+    z-index: 1;
+  }
+
+  th,
+  td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-light); /* ✅ theme */
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--text-secondary); /* ✅ theme */
+  }
+    th:hover {
+    background-color: var(--bg-secondary); /* ✅ theme */
+  }
+tr:hover {
+    background-color: var(--bg-tertiary); /* ✅ theme */
+  }
+  tr {
+    background-color: var(--bg-secondary); /* ✅ theme */
+  }
+
+}
+
+/* For small screens: horizontal scroll if needed */
+@media (max-width: 768px) {
+  .tableContainer {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 100%;
+  }
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+//search
+.cardSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary); /* ✅ theme */
+  border-radius: var(--radius-xl);
+  padding: 0 var(--spacing-md);
+  height: 40px;
+
+  svg {
+    color: var(--text-muted); /* ✅ theme */
+    margin-right: var(--spacing-sm);
+  }
+
+  input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary); /* ✅ theme */
+    font-size: 0.875rem;
+
+    &::placeholder {
+      color: var(--text-muted); /* ✅ theme */
+    }
+  }
+}
+
+.badges {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+
+  span {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: var(--bg-tertiary); /* ✅ theme */
+    color: var(--text-primary); /* ✅ theme */
+  }
+}
+
+.header {
+  position: fixed;
+  top: 64px;
+  left:280px;
+  right: 0;
+  z-index: 30;
+  
+  background-color: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md); // Optional: ensure spacing
+  transition: left 0.3s ease;  // <-- smooth move when sidebar toggles
+  width: calc(100% - 280px);   // <-- prevent right side gap
+
+  // When sidebar is collapsed
+  .collapsed & {
+    left: 90px;
+    width: calc(100% - 90px);
+  }
+
+  @media (max-width: 769px) {
+   left:0;
+   width: 100%;
+  }
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--accent-primary); /* ✅ theme */
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  transition: var(--transition-fast);
+
+  &:hover {
+    background-color: var(--accent-hover); /* ✅ theme */
+    transform: translateY(-1px);
+  }
+}

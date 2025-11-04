@@ -1,0 +1,57 @@
+
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: var(--border-medium);
+  border-radius: 12px;
+  transition: var(--transition-medium);
+  
+  &.checked {
+    background-color: var(--accent-primary);
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: var(--transition-medium);
+  box-shadow: 0 2px 4px var(--shadow-medium);
+  
+  .checked & {
+    transform: translateX(20px);
+  }
+}
+
+.text {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}

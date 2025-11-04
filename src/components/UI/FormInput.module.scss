@@ -1,0 +1,75 @@
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.label {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.required {
+  color: var(--error);
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: var(--spacing-md);
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+  
+  &.withIcon {
+    padding-left: 2.75rem;
+  }
+  
+  &:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+  }
+  
+  &.error {
+    border-color: var(--error);
+    
+    &:focus {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.1);
+    }
+  }
+  
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.errorText {
+  color: var(--error);
+  font-size: 0.75rem;
+  margin-top: calc(var(--spacing-xs) * -1);
+}

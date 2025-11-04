@@ -1,0 +1,91 @@
+import React, { useState } from "react";
+import "./index.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router";
+import API from "./axios";
+import { useAuth } from "./context/AuthContext";
+
+const LoginForm = () => {
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await API.post("/auth/login", formData);
+      if (res.data.success) {
+        login(res.data.user);
+        navigate("/");
+      } else {
+        setError(res.data.message || "Login failed");
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="app">
+      <div className="login-container">
+        <div className="login-box">
+          <h2 className="login-title">Welcome Back</h2>
+          <p className="login-subtitle">Sign in to access your account</p>
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={formData.username}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
+              className="input-field"
+              required
+            />
+
+            <div className="password-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                value={formData.password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+                className="input-field password-input"
+                required
+              />
+              <button
+                type="button"
+                className="eye-toggle"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+
+            {error && <p className="error-text">{error}</p>}
+
+            <button
+              className="sign-in-button"
+              disabled={loading}
+              type="submit"
+            >
+              {loading ? "Logging in..." : "Login"}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginForm;

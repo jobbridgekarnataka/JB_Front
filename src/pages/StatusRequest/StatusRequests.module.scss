@@ -1,0 +1,128 @@
+
+
+.container {
+  padding: var(--spacing-lg);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 1px 3px var(--shadow-medium);
+
+  th,
+  td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    img{
+      width: 75px;
+      height:75px;
+      border-radius: 50%;
+      object-fit: contain;
+
+    }
+  }
+
+  th {
+    background-color: var(--bg-tertiary);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  tr {
+    transition: background var(--transition-medium), transform var(--transition-fast);
+  }
+
+  tr:hover {
+    background-color: var(--bg-tertiary);
+    transform: scale(1.005);
+  }
+}
+
+.approve,
+.reject {
+  padding: 0.4rem 1rem;
+  margin-right: var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  transition: background var(--transition-fast), transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+
+
+.approve {
+   background-color: #28a745;
+
+  &:hover {
+   background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+  }
+}
+
+.reject {
+    background-color: #dc3545;
+
+  &:hover {
+   background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+  }
+}
+
+.loader {
+  --c: no-repeat linear-gradient(var(--accent-primary) 0 0);
+  background: var(--c), var(--c), var(--c), var(--c), var(--c), var(--c), var(--c), var(--c),
+    var(--c);
+  background-size: 16px 16px;
+  animation: l32-1 1s infinite, l32-2 1s infinite;
+}
+
+@keyframes l32-1 {
+  0%,
+  100% {
+    width: 45px;
+    height: 45px;
+  }
+  35%,
+  65% {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@keyframes l32-2 {
+  0%,
+  40% {
+    background-position: 0 0, 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%, 100% 0, 50% 0,
+      50% 50%;
+  }
+  60%,
+  100% {
+    background-position: 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%, 100% 0, 50% 0, 0 0,
+      50% 50%;
+  }
+}
+
+.app {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,114 @@
+//Recent Activities
+
+.subtask {
+  color: #007bff;
+  font-weight: 600;
+}
+.task {
+  color: #28a745;
+  font-weight: 600;
+}
+.members {
+  color: #dc3545;
+  font-weight: 600;
+}
+.project {
+  color: #6f42c1;
+  font-weight: 600;
+}
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+}
+
+.activityItem {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+    &:hover {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.timeInfo {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.pagination button:hover {
+  background: #0056b3;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+.activityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.activityContent {
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  
+  
+}
